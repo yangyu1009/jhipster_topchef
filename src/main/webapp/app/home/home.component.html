@@ -1,41 +1,167 @@
-<div class="row">
-    <div class="col-md-3">
-        <span class="hipster img-fluid rounded"></span>
+<!--<div class="row">-->
+    <!--<div class="col-md-3">-->
+        <!--<span class="hipster img-fluid rounded"></span>-->
+    <!--</div>-->
+    <!--<div class="col-md-9">-->
+        <!--<h1 class="display-4">Welcome, Java Hipster!</h1>-->
+        <!--<p class="lead">This is your homepage</p>-->
+
+        <!--<div [ngSwitch]="isAuthenticated()">-->
+            <!--<div class="alert alert-success" *ngSwitchCase="true">-->
+                <!--<span id="home-logged-message" *ngIf="account"-->
+                   <!--&gt; You are logged in as user "{{account.login}}". </span>-->
+            <!--</div>-->
+
+            <!--<div class="alert alert-warning" *ngSwitchCase="false">-->
+                <!--<span>If you want to </span>-->
+                <!--<a class="alert-link" (click)="login()">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>-->
+            <!--</div>-->
+            <!--<div class="alert alert-warning" *ngSwitchCase="false">-->
+                <!--<span>You don't have an account yet?</span>&nbsp;-->
+                <!--<a class="alert-link" routerLink="account/register">Register a new account</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<p>-->
+            <!--If you have any question on JHipster:-->
+        <!--</p>-->
+
+        <!--<ul>-->
+            <!--<li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">JHipster homepage</a></li>-->
+            <!--<li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">JHipster on Stack Overflow</a></li>-->
+            <!--<li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">JHipster bug tracker</a></li>-->
+            <!--<li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">JHipster public chat room</a></li>-->
+            <!--<li><a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">follow @jhipster on Twitter</a></li>-->
+        <!--</ul>-->
+
+        <!--<p>-->
+            <!--<span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">GitHub</a>!-->
+        <!--</p>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="ui bottom attached segment pushable">
+    <div class="ui visible left vertical sidebar menu">
+        <a class="item">
+            <span class="categoryName">Fish</span>
+        </a>
+        <a class="item">
+            <span class="categoryName">Meet</span>
+        </a>
+        <a class="item">
+            <span class="categoryName">Vegetable</span>
+        </a>
+        <a class="item">
+            <!--<img class="ui avatar image" src="assets/images/dessert.png">-->
+            <span class="categoryName">Dessert</span>
+        </a>
     </div>
-    <div class="col-md-9">
-        <h1 class="display-4">Welcome, Java Hipster!</h1>
-        <p class="lead">This is your homepage</p>
+    <div class="pusher">
+        <div class="ui horizontal segments" style="width: 80%; height: 400px" >
+            <div class="ui segment" style="width: 35%;">
+                <div class="ui grid" style="margin-left: -15px;margin-top: 20px; ">
+                    <ngb-carousel *ngIf="images" >
 
-        <div [ngSwitch]="isAuthenticated()">
-            <div class="alert alert-success" *ngSwitchCase="true">
-                <span id="home-logged-message" *ngIf="account"
-                   > You are logged in as user "{{account.login}}". </span>
-            </div>
+                        <ng-template ngbSlide>
 
-            <div class="alert alert-warning" *ngSwitchCase="false">
-                <span>If you want to </span>
-                <a class="alert-link" (click)="login()">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+                            <img src="assets/image/home_pic1.jpg" alt="Random first slide" class="fixSlideSize" routerLink="/item" routerLinkActive="active">
+                            <div class="carousel-caption">
+                                <h3>Fast Food</h3>
+                                <!--<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>-->
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <img src="assets/image/home_pic2.jpg" alt="Random third slide" class="fixSlideSize" routerLink="/item" routerLinkActive="active">
+                            <div class="carousel-caption">
+                                <h3>Chinese Food</h3>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <img src="assets/image/home_pic3.jpg" alt="Random second slide" class="fixSlideSize" routerLink="/item" routerLinkActive="active">
+                            <div class="carousel-caption">
+                                <h3>Dessert</h3>
+                            </div>
+                        </ng-template>
+
+                    </ngb-carousel>
+                </div>
             </div>
-            <div class="alert alert-warning" *ngSwitchCase="false">
-                <span>You don't have an account yet?</span>&nbsp;
-                <a class="alert-link" routerLink="account/register">Register a new account</a>
-            </div>
+            <!--<div class="ui segment" style="margin-left: 20px; width: 30%" [ngSwitch]="loginSuccess">-->
+                <!--<div *ngSwitchCase="false" class="ui middle aligned center aligned grid" style="width: 90%">-->
+                    <!--<div class="column">-->
+                        <!--<h2 class="ui image header">-->
+                            <!--<div class="content">-->
+                                <!--Log-in to your account-->
+                            <!--</div>-->
+                        <!--</h2>-->
+                        <!--<form action="http://localhost:5005/user/login" name="form3" method="post" class="ui register form" style="margin-left: 50px">-->
+                            <!--<div class="ui stacked secondary  segment">-->
+                                <!--&lt;!&ndash;<div class="field">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="ui left icon input">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<i class="user icon"></i>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<input type="text" name="email" id= "email" placeholder="E-mail address">&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--<div class="field">-->
+                                    <!--<div class="ui left icon input">-->
+                                        <!--<i class="lock icon"></i>-->
+                                        <!--<input type="text" name="email" id="email" placeholder="email">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="field">-->
+                                    <!--<div class="ui left icon input">-->
+                                        <!--<i class="lock icon"></i>-->
+                                        <!--<input type="password" name="password"  id="password" placeholder="Password">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash;<button (click)="onClick()" class="ui fluid large teal submit button" >Login</button>&ndash;&gt;-->
+                                <!--<div class="field">-->
+                                    <!--<input class="ui fluid large teal submit button" type="button"  type="submit" value="login" onclick="form3.action='http://localhost:5005/user/login';form3.submit();"/>-->
+                                    <!--&lt;!&ndash;<button class="ui fluid large teal submit button" type="submit">login</button>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="ui left icon input">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<i class="lock icon"></i>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<input type="text" name="userName" id="uerName" placeholder="userName">&ndash;&gt;-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<button type="submit" class="ui fluid large teal submit button">register</button>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                                <!--<button class="ui fluid large teal submit button" routerLink="/register" routerLinkActive="active">register</button>-->
+                            <!--</div>-->
+                            <!--<div class="ui error message"></div>-->
+                        <!--</form>-->
+
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div *ngSwitchCase="true">-->
+                    <!--<p>Welcome!!!</p>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
 
-        <p>
-            If you have any question on JHipster:
-        </p>
+        <div class="ui segments" style="width: 80%">
+            <div class="ui segment">
+                <div style="margin-left: 15px">
+                    <h2>BEST RECIPES TODAY</h2>
+                </div>
+                <div class="ui grid" style="margin-left: 15px; margin-right: 0px">
+                    <div class="row stretched">
+                        <div class="four wide column noPadding">
+                            <img src="assets/image/home_pic1.jpg" style="object-fit: fill" routerLink="/cloth" routerLinkActive="active">
+                        </div>
+                        <div class="four wide column noPadding">
+                            <img src="assets/image/home_pic2.jpg" style="object-fit: fill" routerLink="/book" routerLinkActive="active">
+                        </div>
+                        <div class="four wide column noPadding">
+                            <img src="assets/image/home_pic3.jpg" style="object-fit: fill" routerLink="/purse" routerLinkActive="active">
+                        </div>
+                        <div class="four wide column noPadding">
+                            <img src="assets/image/home_pic4.jpg" style="object-fit: fill" routerLink="/purse" routerLinkActive="active">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <ul>
-            <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">JHipster homepage</a></li>
-            <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">JHipster on Stack Overflow</a></li>
-            <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">JHipster bug tracker</a></li>
-            <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">JHipster public chat room</a></li>
-            <li><a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">follow @jhipster on Twitter</a></li>
-        </ul>
-
-        <p>
-            <span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">GitHub</a>!
-        </p>
+        </div>
     </div>
 </div>

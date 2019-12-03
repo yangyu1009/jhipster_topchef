@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { TopChefSharedModule } from 'app/shared/shared.module';
 import { HOME_ROUTE } from './home.route';

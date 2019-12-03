@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
-
+// import "~bootstrap/dist/css/bootstrap.css";
 import { LoginModalService } from 'app/core/login/login-modal.service';
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/user/account.model';
@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   account: Account;
   authSubscription: Subscription;
   modalRef: NgbModalRef;
+  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 
   constructor(
     private accountService: AccountService,

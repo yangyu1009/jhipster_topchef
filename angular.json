@@ -10,7 +10,8 @@
       "schematics": {
         "@schematics/angular:component": {
           "skipTests": true,
-          "style": "scss"
+          "style": "scss",
+          "scripts": "node_modules/semantic-ui/dist/semantic.min.js"
         },
         "@schematics/angular:directive": {
           "skipTests": true

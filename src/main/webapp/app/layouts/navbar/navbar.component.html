@@ -6,6 +6,29 @@
     <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
         <fa-icon icon="bars"></fa-icon>
     </a>
+
+    <div class="ui menu">
+
+        <a class="item" routerLink="/" routerLinkActive="active">
+            Home
+        </a>
+        <a class="item" routerLink="/all" routerLinkActive="active">
+            All Recipes
+        </a>
+        <a class="item" routerLink="/allCategory" routerLinkActive="active">
+            All Categories
+        </a>
+        <div class="right item">
+
+
+            <div class="ui action input">
+                <input [(ngModel)]="searchKey" type="text" placeholder="Navigate to...">
+                <button class="ui button" type="submit" (click)="searchRequest(searchKey)">Go</button>
+            </div>
+
+        </div>
+    </div>
+
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

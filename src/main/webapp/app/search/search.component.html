@@ -1,0 +1,12 @@
+<div class="ui four column relaxed grid "  style="margin-left: 15px" *ngFor="let searchChunk of searchChunks;">
+    <div class="row ">
+        <div class="column ui segment"  *ngFor="let searchRes of searchChunk;">
+
+            <img src={{searchRes.image}} (click) = "onSelect(searchRes)" class="fixImageSize"/>
+            <p>{{searchRes.recipeName}}</p>
+
+        </div>
+
+    </div>
+
+</div>

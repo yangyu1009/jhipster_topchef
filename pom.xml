@@ -171,6 +171,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -330,6 +331,11 @@
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>
@@ -599,6 +605,7 @@
                         </container>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.liquibase</groupId>
                     <artifactId>liquibase-maven-plugin</artifactId>
@@ -661,6 +668,16 @@
                             <groupId>org.springframework</groupId>
                             <artifactId>spring-beans</artifactId>
                             <version>${spring.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>javax.interceptor</groupId>
+                            <artifactId>javax.interceptor-api</artifactId>
+                            <version>1.2</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.springframework</groupId>
+                            <artifactId>spring-jdbc</artifactId>
+                            <version>3.2.1.RELEASE</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -815,6 +832,21 @@
                     <version>${spring-boot.version}</version>
                 </plugin>
                 <!-- jhipster-needle-maven-add-plugin-management -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <!-- <version>3.0.0</version> -->
+                    <configuration>
+                        <!-- Silence error javax.interceptor.InterceptorBinding not found -->
+                        <additionalDependencies>
+                            <additionalDependency>
+                                <groupId>javax.interceptor</groupId>
+                                <artifactId>javax.interceptor-api</artifactId>
+                                <version>1.2</version>
+                            </additionalDependency>
+                        </additionalDependencies>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>

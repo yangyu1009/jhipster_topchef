@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
     });
 
     try {
-      const data = await axios.get('http://localhost:5005/recipe/search/' + searchKey);
+      const data = await axios.get('http://localhost:8080/recipe/search/' + searchKey);
       this.searchChunks = this.chunks(data.data, 4);
     } catch (e) {
       // TODO handle get data fail later

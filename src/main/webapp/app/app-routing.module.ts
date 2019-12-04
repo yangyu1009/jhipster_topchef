@@ -9,6 +9,10 @@ import { CreateRecipeComponent } from 'app/create-recipe/create-recipe.component
 import { UserPageComponent } from 'app/user-page/user-page.component';
 import { RegisterComponent } from 'app/register/register.component';
 import { SearchComponent } from 'app/search/search.component';
+import { ALL } from 'tslint/lib/rules/completedDocsRule';
+import { AllRecipeComponent } from 'app/all-recipe/all-recipe.component';
+import { ItemComponent } from 'app/item/item.component';
+import { HomeComponent } from 'app/home/home.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -41,8 +45,20 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           component: RegisterComponent
         },
         {
-          path: 'search/:id',
+          path: 'search/:searchKey',
           component: SearchComponent
+        },
+        {
+          path: 'all',
+          component: AllRecipeComponent
+        },
+        {
+          path: 'item/:id',
+          component: ItemComponent
+        },
+        {
+          path: '',
+          component: HomeComponent
         },
 
         ...LAYOUT_ROUTES

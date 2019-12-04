@@ -13,7 +13,7 @@ export class AllRecipeComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      const data = await axios.get('http://localhost:5005/recipe/all');
+      const data = await axios.get('http://localhost:8080/recipe/all');
       this.recipeChunks = this.chunks(data.data, 4);
       //console.table(this.bookChunks);
     } catch (e) {

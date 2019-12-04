@@ -23,7 +23,7 @@ export class ItemComponent implements OnInit {
       id = params['id'];
     });
     try {
-      this.list = await axios.get('http://localhost:5005/recipe/recipeDetail/' + id).then(function(response) {
+      this.list = await axios.get('http://localhost:8080/recipe/recipeDetail/' + id).then(function(response) {
         const detail = response.data;
         // console.log(response.data.title);
 
